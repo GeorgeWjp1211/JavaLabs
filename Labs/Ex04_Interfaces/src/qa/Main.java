@@ -27,5 +27,13 @@ public class Main {
 
         c.move(10.5, 4.3);
         System.out.println("CIrcle location before move: " + c.getCurrentLocation());
+
+        System.out.println("Circle location after move: " + c2.getCurrentLocation());
+
+        System.out.println(c.getClass());
+
+        if (c instanceof Circle){
+            System.out.println("It's a circle");
+        }
     }
 }

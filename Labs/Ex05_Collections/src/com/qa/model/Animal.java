@@ -1,18 +1,15 @@
 package com.qa.model;
 
-public abstract class Animal{
-    //private fields
+public abstract class Animal implements Comparable<Animal>{
     private String name;
     private int age;
 
-    //constructor
-    public Animal(String name, int age){
+    public Animal(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    //setters and getters for name and age
-
+    //Getter and Setter
     public String getName() {
         return name;
     }
@@ -26,11 +23,18 @@ public abstract class Animal{
         this.age = age;
     }
 
+    //toString
     public String toString() {
-        return "Name: " + name + " Age: " + age;
+        return "Name: " + name +
+                " Age: " + age;
     }
 
-    //abstract methods
     public abstract String sayHello();
     public abstract String move();
+
+    @Override
+    public int compareTo(Animal o){
+        return age - o.getAge();
+        }
+
 }
